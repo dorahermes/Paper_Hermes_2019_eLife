@@ -1,0 +1,8 @@
+#.gitignore
+#
+
+*.DS_STORE
+*.mat
+*.png
+*.epsc
+*.eps
