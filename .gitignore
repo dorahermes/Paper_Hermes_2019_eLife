@@ -3,6 +3,8 @@
 
 *.DS_STORE
 *.mat
+*.m~
 *.png
 *.epsc
 *.eps
+./data/*
