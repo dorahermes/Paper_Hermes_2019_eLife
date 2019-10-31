@@ -1,9 +1,10 @@
-function gammaModelCodePath
-% Set Matlab directory path for Gamma Model project
+function rootPath = gammaModelPath()
+% Set directory path for Gamma Model project
 %
-%     gammaModelCodePath
+%     gammaModelPath
 %
 % Set up the path to the functions called by Gamma Model functions.
+% Put data from OSF in rootPath/data/
 
 rootPath = fileparts(which(mfilename));
 fprintf('gamma model code directory: %s\n',rootPath)

@@ -21,11 +21,8 @@
 clear all
 
 % set paths:
-gammaModelPath;
-dataDir = './data/';
-
-% add other toolboxes:
-addpath(genpath('/Users/dora/Documents/m-files/knkutils'));
+rootPath = gammaModelPath();
+dataDir = fullfile(rootPath,'data');
 
 %% Render Benson Areas with electrodes
 
