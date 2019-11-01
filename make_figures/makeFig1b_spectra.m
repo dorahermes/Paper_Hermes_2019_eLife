@@ -7,7 +7,7 @@
 % for the stimulus selectivity of gamma oscillations. eLife 2019;8:e47035.
 % DOI: https://doi.org/10.7554/eLife.47035
 %
-% Dora Hermes 2019, UMC Utrecht, Mayo Clinic
+% Dora Hermes 2019
 
 clear all
 

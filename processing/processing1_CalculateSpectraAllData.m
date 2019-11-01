@@ -1,8 +1,11 @@
+%
+%
 % This script will calculate the spectral power changes for all ECoG data
 % reported in: 
+%
 % Hermes D, Petridou N, Kay K, Winawer J. 2019 An image-computable model
-% for the stimulus selectivity of gamma oscillations. bioRxiv doi:
-% https://doi.org/10.1101/583567
+% for the stimulus selectivity of gamma oscillations. eLife 2019;8:e47035.
+% DOI: https://doi.org/10.7554/eLife.47035
 %
 % Data are first epoched, power spectra are calculated and then runs are
 % combined.

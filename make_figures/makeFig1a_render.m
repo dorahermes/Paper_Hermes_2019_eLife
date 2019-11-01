@@ -1,9 +1,12 @@
 %
 % This script will generate Figure 1A from: 
+%
 % Hermes D, Petridou N, Kay K, Winawer J. 2019 An image-computable model
 % for the stimulus selectivity of gamma oscillations. eLife 2019;8:e47035.
 % DOI: https://doi.org/10.7554/eLife.47035
 % 
+%
+%
 % The cortical surface is rendered with visual maps extracted by the
 % updated Benson atlas. We add ECoG electrodes that were used for analyses
 % (located on V1, V2, V3 with receptive fields within the presented images)
@@ -16,7 +19,7 @@
 % The Retinotopic Organization of Striate Cortex Is Well Predicted by Surface Topology
 % Current Biology, Volume 22, Issue 23, 4 December 2012, Pages 2284
 % 
-% dhermes 2018 UMC Utrecht
+% dhermes 2018 
 
 clear all
 

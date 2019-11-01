@@ -1,5 +1,8 @@
+%
+%
 % This script will extract broadband and gamma amplitudes from the spectra
 % as done in:
+%
 % Hermes D, Petridou N, Kay K, Winawer J. 2019 An image-computable model
 % for the stimulus selectivity of gamma oscillations. eLife 2019;8:e47035.
 % DOI: https://doi.org/10.7554/eLife.47035
