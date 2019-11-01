@@ -1,10 +1,10 @@
 % This script will extract broadband and gamma amplitudes from the spectra
 % as done in:
 % Hermes D, Petridou N, Kay K, Winawer J. 2019 An image-computable model
-% for the stimulus selectivity of gamma oscillations. bioRxiv doi:
-% https://doi.org/10.1101/583567
+% for the stimulus selectivity of gamma oscillations. eLife 2019;8:e47035.
+% DOI: https://doi.org/10.7554/eLife.47035
 %
-% dhermes 2019
+% Dora Hermes 2019
 
 clear all
 
@@ -38,8 +38,8 @@ for ss = 1:length(electrodes_allsubjects)
     elec = electrodes_allsubjects(ss);
     elec_nr = find(elec==electrodes_incl);
 
-    [a,b] = fileparts(dataName);
-    dataFitName = [a '/' b '_fitEl' int2str(elec)];
+    [~,b] = fileparts(dataName);
+    dataFitName = fullfile(dataDir,'derivatives','preprocessing',[b '_fitEl' int2str(elec)]);
 
     % define output:
     resamp_parms = NaN(max(stims),nr_boots,7);
@@ -109,15 +109,15 @@ for ss = 1:length(electrodes_allsubjects)
     % load data
     dataName = fullfile(dataDir,'derivatives','preprocessing',['sub-' subj],'ses-01','ieeg',...
         ['sub-' subj '_ses-01_task-soc_allruns_' analysisType '.mat']);
-    load(dataName,'f','spectra_off','electrodes_incl')
+    load(dataName,'f','spectra_off','stims','electrodes_incl')
 
     % electrode name and number
     elec = electrodes_allsubjects(ss);
     elec_nr = find(elec==electrodes_incl);
 
     
-    [a,b] = fileparts(dataName);
-    dataFitName = [a '/' b '_fitBaseEl' int2str(elec)];
+    [~,b] = fileparts(dataName);
+    dataFitName = fullfile(dataDir,'derivatives','preprocessing',[b '_fitBaseEl' int2str(elec)]);
     clear a b
 
     % define output:
