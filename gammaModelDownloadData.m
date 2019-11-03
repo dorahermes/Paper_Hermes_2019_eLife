@@ -15,8 +15,19 @@ function gammaModelDownloadData()
 
 url = 'https://osf.io/q4yad/download';
 
-pth = fullfile(gammaModelPath,'data', 'Hermes2019eLifeData.zip');
+codeDir = gammaModelPath;
+dataDir = fullfile(codeDir,'data');
 
+if ~exist(dataDir,'dir')
+    disp(['making data directory: ' dataDir])
+    mkdir(dataDir);
+end
+
+pth = fullfile(dataDir, 'Hermes2019eLifeData.zip');
+
+disp('start downloading data from OSF')
 fname = websave(pth, url);
+
+upzip(pth)
 
 end
