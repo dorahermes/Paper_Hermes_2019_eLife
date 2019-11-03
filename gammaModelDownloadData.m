@@ -25,9 +25,11 @@ end
 
 pth = fullfile(dataDir, 'Hermes2019eLifeData.zip');
 
-disp('start downloading data from OSF')
-fname = websave(pth, url);
+if ~exist(pth,'file')
+    disp('start downloading data from OSF')
+    fname = websave(pth, url);
+    upzip(pth)
+end
 
-upzip(pth)
 
 end
