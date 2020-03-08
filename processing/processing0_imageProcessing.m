@@ -88,7 +88,8 @@ save(fullfile(dataDir,'derivatives','gaborFilt','task-soc_stimuli_gaborFilt01.ma
 
 %% %%%%%% preprocess images - part 3 is fast %%%%%%%%
 
-load(fullfile(dataDir,'soc_bids','derivatives','gaborFilt','task-soc_stimuli_gaborFilt01.mat'),'stimulus')
+% load(fullfile(dataDir,'soc_bids','derivatives','gaborFilt','task-soc_stimuli_gaborFilt01.mat'),'stimulus')
+load(fullfile(dataDir, 'derivatives','gaborFilt','task-soc_stimuli_gaborFilt01.mat'),'stimulus') % rjc
 
 % compute the square root of the sum of the squares of the outputs of
 % quadrature-phase filter pairs (this is the standard complex-cell energy model).

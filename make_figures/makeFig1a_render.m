@@ -21,7 +21,8 @@
 % 
 % dhermes 2018 
 
-clear all
+% clear all
+clearvars
 
 % set paths:
 rootPath = gammaModelPath();
@@ -35,7 +36,11 @@ hemi_s = {'l','r','r'};
 
 % best viewing angle for left/right hemisphere where we can see electrodes
 % for each subject
-warning('electrodes pop out in the viewing direction, do not rotate the brain using the mouse, use the code instead or turn off popout: line 78-79')
+popout = true; % 'false' = turned off
+if popout == true
+    warning('off', 'backtrace') % rjc
+    warning('electrodes pop out in the viewing direction, do not rotate the brain using the mouse, use the code instead or turn off popout')
+end % if
 v_dirs = [64 -23;270 0;-60 -15];
 
 % electrodes used in the paper 
@@ -73,8 +78,12 @@ for s = 1:length(subjects)
     v_d = v_dirs(s,:);
 
     % make sure electrodes pop out
-    % don't rotate the brains if this is used
-    a_offset = .1*max(abs(elecmatrix(:,1)))*[cosd(v_d(1)-90)*cosd(v_d(2)) sind(v_d(1)-90)*cosd(v_d(2)) sind(v_d(2))];
+    % don't rotate the brains if popout is true
+    if popout == true
+        a_offset = .1*max(abs(elecmatrix(:,1)))*[cosd(v_d(1)-90)*cosd(v_d(2)) sind(v_d(1)-90)*cosd(v_d(2)) sind(v_d(2))];
+    else
+        a_offset = 0;
+    end % if
     els = elecmatrix+repmat(a_offset,size(elecmatrix,1),1);
 
     figure
@@ -88,3 +97,4 @@ for s = 1:length(subjects)
 %         ['sub-' subj '_BensonAreas__v' int2str(v_d(1)) '_' int2str(v_d(2))]))
 end
    
+% [EOF]
