@@ -34,9 +34,12 @@ subjects = {'19','24','1001'};
 hemi = {'L','R','R'};
 hemi_s = {'l','r','r'};
 
+% render control
+popout = true; % 'true' = truned on, 'false' = turned off; pop out electrodes
+label_tf = true; % whether label the electrodes
+
 % best viewing angle for left/right hemisphere where we can see electrodes
 % for each subject
-popout = true; % 'false' = turned off
 if popout == true
     warning('off', 'backtrace') % rjc
     warning('electrodes pop out in the viewing direction, do not rotate the brain using the mouse, use the code instead or turn off popout')
@@ -45,6 +48,8 @@ v_dirs = [64 -23;270 0;-60 -15];
 
 % electrodes used in the paper 
 electrodes = {[107 108 109 115 120 121],[45 46],[49 50 52 57 58 59 60]};
+electrodes_label = {["107" "108" "109" "115" "120" "121"],["45" "46"],...
+    ["49" "50" "52" "57" "58" "59" "60"]};
 
 Benson_Area_Names = {'V1','V2','V3','hV4','V01','V02','V3a','V3b','LO1','LO2','TO1','T02'};
 
@@ -79,18 +84,29 @@ for s = 1:length(subjects)
 
     % make sure electrodes pop out
     % don't rotate the brains if popout is true
+    b_offset = .1*max(abs(elecmatrix(:,1)))*[cosd(v_d(1)-90)*cosd(v_d(2)) sind(v_d(1)-90)*cosd(v_d(2)) sind(v_d(2))];
     if popout == true
-        a_offset = .1*max(abs(elecmatrix(:,1)))*[cosd(v_d(1)-90)*cosd(v_d(2)) sind(v_d(1)-90)*cosd(v_d(2)) sind(v_d(2))];
+        a_offset = b_offset;
+        b_offset = 2*a_offset;
     else
         a_offset = 0;
     end % if
-    els = elecmatrix+repmat(a_offset,size(elecmatrix,1),1);
+    els = elecmatrix+repmat(a_offset,size(elecmatrix,1),1); % electrode position
+    els_label = elecmatrix+repmat(b_offset,size(elecmatrix,1),1);
 
     figure
     ecog_RenderGiftiLabels(g,vert_label,cmap,Benson_Area_Names)
 
+    % add symbols of electrodes
     el_add(els(electrodes{s},:),[.99 .99 .99],40) % add electrode positions
     el_add(els(electrodes{s},:),'k',30) % add electrode positions
+    
+    % add labels of electrodes
+    if label_tf == true
+        el_add_label(els(electrodes{s},:), electrodes_label{s}, ...
+            'FontSize', 14, 'Color', 'g')
+    end % if
+    
     ecog_ViewLight(v_d(1),v_d(2)) % change viewing angle   
     set(gcf,'PaperPositionMode','auto')
 %     print('-dpng','-r300',fullfile(dataDir,'derivatives','render',['sub-' subj],...
