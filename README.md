@@ -10,7 +10,7 @@ Please direct any comments about the code via the issues page associated with th
 
 ## Download data
 The data can be downloaded from https://osf.io/q4yad/.
-Unzip and you should have all the data in the folder /data/.
+Unzip it and you should have all the data in the folder /data/.
 Move this directory to /root/directory/of/Paper_Hermes_2019_eLife/.
 The data can also be downloaded by running the code ```gammaModelDownloadData.m``` in /root/directory/of/Paper_Hermes_2019_eLife/.
 
@@ -21,7 +21,7 @@ The data can also be downloaded by running the code ```gammaModelDownloadData.m`
    Put the root directory and all sub-directories in MATLAB path.
 1. FileTrip (https://github.com/fieldtrip/fieldtrip) 
 
-   It is **not** recomented to put all sub-directories into MATLAB path, but rather put the /root/of/fieldtrip/ in the path, then run ```ft_defaults```.  Check [this](http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path) out.
+   It is **not** recommended to put all sub-directories into MATLAB path, but rather put the /root/of/fieldtrip/ in the path, then run ```ft_defaults```.  Check [this](http://www.fieldtriptoolbox.org/faq/should_i_add_fieldtrip_with_all_subdirectories_to_my_matlab_path) out.
 1. VISTASOFT of VISTA lab at Stanford University (https://github.com/vistalab/vistasoft)
 
    Put the root directory and all sub-directories in MATLAB path.
