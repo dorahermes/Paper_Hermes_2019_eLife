@@ -13,7 +13,8 @@
 %
 % Dora Hermes, 2017
 
-clear all
+% clear all
+clearvars
 
 % set paths:
 rootPath = gammaModelPath();
@@ -86,7 +87,7 @@ for s = 3
         analysisType = 'spectra200';
 
         % Load ECoG data: resamp_parms for 1000 bootstraps
-        dataFitName = fullfile(dataDir,'derivatives','preprocessing'...
+        dataFitName = fullfile(dataDir,'derivatives','preprocessing',... % rjc
             ['sub-' subj '_ses-01_task-soc_allruns_' analysisType '_fitEl' int2str(elec) '.mat']);
         load(dataFitName)
 

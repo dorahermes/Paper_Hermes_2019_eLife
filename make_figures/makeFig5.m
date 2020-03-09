@@ -8,8 +8,13 @@
 % 
 %%
 %% Visualize energy per orientation
-%%
-clear all
+%
+% clear all
+clearvars
+
+% set paths:
+rootPath = gammaModelPath();
+dataDir = fullfile(rootPath,'data');
 
 % load images
 load(fullfile(dataDir,'stimuli','task-soc_stimuli.mat'),'stimuli')
@@ -69,6 +74,8 @@ end
  
 set(gcf,'PaperPositionMode','auto')
 print('-dpng','-r300',fullfile(dataDir,'derivatives','figures',...
-    ['Fig5']))
+    'Fig5'))
 print('-depsc','-r300',fullfile(dataDir,'derivatives','figures',...
-    ['Fig5']))
+    'Fig5'))
+
+% [EOF]

@@ -9,7 +9,8 @@
 %
 % Dora Hermes 2019
 
-clear all
+% clear all
+clearvars
 
 % set paths:
 rootPath = gammaModelPath();

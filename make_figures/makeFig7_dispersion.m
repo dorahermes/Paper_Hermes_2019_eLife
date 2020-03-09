@@ -12,7 +12,8 @@
 %
 % Dora Hermes, 2019
 
-clear all
+% clear all
+clearvars
 
 % set paths:
 rootPath = gammaModelPath();
@@ -140,7 +141,7 @@ for ll = 1:length(electrodes)
 
 end 
 
-mean([SOCbb_COD_all SOCg_COD_all OVbb_COD_all OVg_COD_all MEANbb_COD_all MEANg_COD_all])
+% mean([SOCbb_COD_all SOCg_COD_all OVbb_COD_all OVg_COD_all MEANbb_COD_all MEANg_COD_all])
 
 % test whether SOC is better for broadband than OV:
 [~,p,hi,stats] = ttest(fisherz(SOCbb_COD_all./100),fisherz(OVbb_COD_all./100));
@@ -197,41 +198,41 @@ print('-dpng','-r300','-painters',fullfile(dataDir,'derivatives','figures',...
     
 %% plot Spearman
 
-figure('Position',[0 0 300 150]),hold on
-
-plot(OVbb_Spearman_all.^2,SOCbb_Spearman_all.^2,'b.','MarkerSize',10)
-plot(OVg_Spearman_all.^2,SOCg_Spearman_all.^2,'r.','MarkerSize',10)
-
-% plot error bars across the datapoints
-nn = length(SOCbb_Spearman_all);
-group_means = mean([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all]);
-group_low = mean([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all]) - ...
-    2*std([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all])./sqrt(nn);
-group_up = mean([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all]) + ...
-    2*std([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all])./sqrt(nn);
-
-plot([group_means(3) group_means(3)],[group_means(1) group_means(1)],'.','MarkerSize',20,'Color',[0 0 .8])
-plot([group_means(3) group_means(3)],[group_low(1) group_up(1)],'Color',[0 0 .8],'Linewidth',2)
-plot([group_low(3) group_up(3)],[group_means(1) group_means(1)],'Color',[0 0 .8],'Linewidth',2)
-
-plot([group_means(4) group_means(4)],[group_means(2) group_means(2)],'.','MarkerSize',20,'Color',[.8 0 0])
-plot([group_means(4) group_means(4)],[group_low(2) group_up(2)],'Color',[.8 0 0],'Linewidth',2)
-plot([group_low(4) group_up(4)],[group_means(2) group_means(2)],'Color',[.8 0 0],'Linewidth',2)
-
-xlim([0 1]),ylim([0 1])
-plot([0 1],[0 1],'k')
-legend('broadband','gamma','Location','eastoutside')
-xlabel('Spearman OV model')
-ylabel('Spearman SOC model')
-set(gca,'XTick',[0:.2:1],'YTick',[0:.2:1])
-axis square
- 
-% Save Dispersion Figure
-set(gcf,'PaperPositionMode','auto')
-print('-depsc','-r300','-painters',fullfile(dataDir,'derivatives','figures',...
-        ['Dispersion_Spearman']))
-print('-dpng','-r300','-painters',fullfile(dataDir,'derivatives','figures',...
-        ['Dispersion_Spearman']))
+% figure('Position',[0 0 300 150]),hold on
+% 
+% plot(OVbb_Spearman_all.^2,SOCbb_Spearman_all.^2,'b.','MarkerSize',10)
+% plot(OVg_Spearman_all.^2,SOCg_Spearman_all.^2,'r.','MarkerSize',10)
+% 
+% % plot error bars across the datapoints
+% nn = length(SOCbb_Spearman_all);
+% group_means = mean([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all]);
+% group_low = mean([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all]) - ...
+%     2*std([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all])./sqrt(nn);
+% group_up = mean([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all]) + ...
+%     2*std([SOCbb_Spearman_all,SOCg_Spearman_all,OVbb_Spearman_all,OVg_Spearman_all])./sqrt(nn);
+% 
+% plot([group_means(3) group_means(3)],[group_means(1) group_means(1)],'.','MarkerSize',20,'Color',[0 0 .8])
+% plot([group_means(3) group_means(3)],[group_low(1) group_up(1)],'Color',[0 0 .8],'Linewidth',2)
+% plot([group_low(3) group_up(3)],[group_means(1) group_means(1)],'Color',[0 0 .8],'Linewidth',2)
+% 
+% plot([group_means(4) group_means(4)],[group_means(2) group_means(2)],'.','MarkerSize',20,'Color',[.8 0 0])
+% plot([group_means(4) group_means(4)],[group_low(2) group_up(2)],'Color',[.8 0 0],'Linewidth',2)
+% plot([group_low(4) group_up(4)],[group_means(2) group_means(2)],'Color',[.8 0 0],'Linewidth',2)
+% 
+% xlim([0 1]),ylim([0 1])
+% plot([0 1],[0 1],'k')
+% legend('broadband','gamma','Location','eastoutside')
+% xlabel('Spearman OV model')
+% ylabel('Spearman SOC model')
+% set(gca,'XTick',[0:.2:1],'YTick',[0:.2:1])
+% axis square
+%  
+% % Save Dispersion Figure
+% set(gcf,'PaperPositionMode','auto')
+% print('-depsc','-r300','-painters',fullfile(dataDir,'derivatives','figures',...
+%         ['Dispersion_Spearman']))
+% print('-dpng','-r300','-painters',fullfile(dataDir,'derivatives','figures',...
+%         ['Dispersion_Spearman']))
 
 %% plot Scatter prediction & data
 
