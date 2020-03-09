@@ -34,9 +34,12 @@ subjects = {'19','24','1001'};
 hemi = {'L','R','R'};
 hemi_s = {'l','r','r'};
 
+% render control
+popout = true; % 'true' = truned on, 'false' = turned off; pop out electrodes
+label_tf = true; % whether label the electrodes
+
 % best viewing angle for left/right hemisphere where we can see electrodes
 % for each subject
-popout = true; % 'false' = turned off
 if popout == true
     warning('off', 'backtrace') % rjc
     warning('electrodes pop out in the viewing direction, do not rotate the brain using the mouse, use the code instead or turn off popout')
@@ -94,8 +97,16 @@ for s = 1:length(subjects)
     figure
     ecog_RenderGiftiLabels(g,vert_label,cmap,Benson_Area_Names)
 
+    % add symbols of electrodes
     el_add(els(electrodes{s},:),[.99 .99 .99],40) % add electrode positions
     el_add(els(electrodes{s},:),'k',30) % add electrode positions
+    
+    % add labels of electrodes
+    if label_tf == true
+        el_add_label(els(electrodes{s},:), electrodes_label{s}, ...
+            'FontSize', 14, 'Color', 'g')
+    end % if
+    
     ecog_ViewLight(v_d(1),v_d(2)) % change viewing angle   
     set(gcf,'PaperPositionMode','auto')
 %     print('-dpng','-r300',fullfile(dataDir,'derivatives','render',['sub-' subj],...
