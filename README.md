@@ -1,7 +1,5 @@
 # Paper Hermes 2019 eLife
-This repository contains functions and scripts that were used in developing the OV model and generate the results and figures from:
-Hermes D, Petridou N, Kay K, Winawer J. 2019 An image-computable model
-for the stimulus selectivity of gamma oscillations. eLife
+This repository contains functions and scripts that were used in developing the OV model and generate the results and figures from [Hermes et al, 2019](https://elifesciences.org/articles/47035).
 If you use this code as a part of any publications, please please cite this work.
 
 Code (c) Dora Hermes, Kendrick Kay and Jonathan Winawer
@@ -45,7 +43,7 @@ The analyses data can be loaded and the figures can be reproduced with the funct
 
 ## Reproducing analyses
 Functions to analyses the data and fit the models can be found here: /processing/.
-Please note that the raw iEEG data are not included. Interested reader should refer to the reference [Hermes, 2019](https://elifesciences.org/articles/47035) or script ```preprocess_ECoGDataBeforeShare.m``` for the detailed steps of pre-processing the raw data.
+Please note that the raw iEEG data are not included. Interested reader should refer to the reference [Hermes et al, 2019](https://elifesciences.org/articles/47035) or script ```preprocess_ECoGDataBeforeShare.m``` for the detailed steps of pre-processing the raw data.
 
 
 ## Acknowledgements
