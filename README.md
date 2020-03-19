@@ -43,7 +43,7 @@ The analyses data can be loaded and the figures can be reproduced with the funct
 
 ## Reproducing analyses
 Functions to analyses the data and fit the models can be found here: /processing/.
-Please note that the raw iEEG data are not included. Interested reader should refer to the reference [Hermes et al, 2019](https://elifesciences.org/articles/47035) or script ```preprocess_ECoGDataBeforeShare.m``` for the detailed steps of pre-processing the raw data.
+Please note that the raw iEEG data are not included. Interested reader should refer to the reference [Hermes, 2019](https://elifesciences.org/articles/47035) or script ```preprocess_ECoGDataBeforeShare.m``` for the detailed steps of pre-processing the raw data.
 
 
 ## Acknowledgements
