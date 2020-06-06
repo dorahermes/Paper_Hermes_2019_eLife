@@ -1,5 +1,7 @@
-[![Contributors](https://github.com/dorahermes/Paper_Hermes_2015_CerCortex)](https://github.com/badges/shields/graphs/contributors)
+[![GitHub Contributors](https://img.shields.io/github/contributors/dorahermes/Paper_Hermes_2019_eLife.svg)](https://github.com/dorahermes/Paper_Hermes_2019_eLife/graphs/contributors)
+[![HitCount](http://hits.dwyl.io/dorahermes/Paper_Hermes_2019_eLife.svg)](http://hits.dwyl.io/dorahermes/Paper_Hermes_2019_eLife)
 [![@Dora](http://img.shields.io/twitter/follow/dora_hermes.svg?style=social)](https://twitter.com/dora_hermes?lang=en)
+[![Github Download Count](https://img.shields.io/github/downloads/dorahermes/Paper_Hermes_2019_eLife/total.svg)](https://GitHub.com/dorahermes/Paper_Hermes_2019_eLife/releases/)
 
 # Paper Hermes 2019 eLife
 This repository contains functions and scripts that were used in developing the OV model and generate the results and figures from [Hermes et al, 2019](https://elifesciences.org/articles/47035).
