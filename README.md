@@ -1,4 +1,4 @@
-[![Contributors](https://img.shields.io/github/contributors/badges/shields)](https://github.com/badges/shields/graphs/contributors)
+[![Contributors](https://github.com/dorahermes/Paper_Hermes_2015_CerCortex)](https://github.com/badges/shields/graphs/contributors)
 [![@Dora](http://img.shields.io/twitter/follow/dora_hermes.svg?style=social)](https://twitter.com/dora_hermes?lang=en)
 
 # Paper Hermes 2019 eLife
