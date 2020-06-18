@@ -1,4 +1,3 @@
-[![GitHub Contributors](https://img.shields.io/github/contributors/dorahermes/Paper_Hermes_2019_eLife.svg)](https://github.com/dorahermes/Paper_Hermes_2019_eLife/graphs/contributors)
 [![HitCount](http://hits.dwyl.io/dorahermes/Paper_Hermes_2019_eLife.svg)](http://hits.dwyl.io/dorahermes/Paper_Hermes_2019_eLife)
 [![@Dora](http://img.shields.io/twitter/follow/dora_hermes.svg?style=social)](https://twitter.com/dora_hermes?lang=en)
 [![Github Download Count](https://img.shields.io/github/downloads/dorahermes/Paper_Hermes_2019_eLife/total.svg)](https://GitHub.com/dorahermes/Paper_Hermes_2019_eLife/releases/)
