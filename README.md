@@ -16,6 +16,8 @@ Unzip it and you should have all the data in the folder /data/.
 Move this directory to /root/directory/of/Paper_Hermes_2019_eLife/.
 The data can also be downloaded by running the code ```gammaModelDownloadData.m``` in /root/directory/of/Paper_Hermes_2019_eLife/.
 
+Note on _events.tsv: in subject 3, we later found that there was a 73 ms additional delay in the connection between the stimulus onset and the moment the code arrived on the computer. Subtracting 73 ms from the stimulus onset will fix this error.
+
 ## Software dependencies
 ### Make sure that the following toolboxes are downloaded and in the path:
 1. MATLAB utility functions written by Kendrick Kay (https://github.com/kendrickkay/knkutils)
